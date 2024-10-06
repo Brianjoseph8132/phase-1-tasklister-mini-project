@@ -11,7 +11,25 @@ body {
 }
 
 button {
-  font-size: 7px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  margin: 10px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: -4s ease;
+}
+button:hover{
+  background-color: aqua;
+  color: white ;
+}
+input{
+  flex: 1;
+  padding: 5px;
+  border: 1px aqua;
+  border-radius: 10px;
+  color: black;
 }
 
 #main-content {
