@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
    <label for="time">Time</label>  <input id ="duration" type ="time" placeholder ="Duration"required><br><br>
     <label for="date">Date</label>  <input id ="date" type ="date" placeholder ="Date due "required><br><br>
     <button id ="new-task" type ="submit">ADD</button>`
-  let task = [];
+  
   // prevent the reloading after submitting
   form.addEventListener("submit",function (e){
     e.preventDefault();
@@ -22,6 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const uservalue = document.getElementById("task-list")
     uservalue.innerHTML += `<h5>${description} </h5> <h5>${user}</h5> <h5>${duration}<h5>${date}</h5>`
   });
+  const task = document.getElementById("task-list")
+  task.innerHTML +=`<li> ${description} ${user} ${date} ${duration}
+  <button id="remove">X</button>
+  <button id="edit">edit</button>
+  </li>`
+  // delete button
+  const remove = document.getElementById("remove")
+  remove.addEventListener("click",(e)=>{
+    e.target.parentNode.remove()
+  })
+  const edit =document.getElementById("edit")
+  edit.addEventListener("click", (e) =>{
+    e.target.parentNode.edit()
+  })
   });
   
 });
